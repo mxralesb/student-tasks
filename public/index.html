@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Tasks</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header class="container">
+    <div class="brand">
+      <div class="logo">✓</div>
+      <h1>Student Tasks</h1>
+    </div>
+
+    <nav class="nav">
+      <button id="navLogin" class="btn ghost">Login</button>
+      <button id="navRegister" class="btn ghost">Registro</button>
+      <button id="navLogout" class="btn danger hidden">Salir</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Auth -->
+    <section id="authSection" class="card">
+      <div class="tabs">
+        <button id="tabLogin" class="tab active">Iniciar sesión</button>
+        <button id="tabRegister" class="tab">Crear cuenta</button>
+      </div>
+
+      <form id="loginForm" class="form-grid">
+        <label>
+          <span>Email</span>
+          <input id="loginEmail" type="email" placeholder="email" required />
+        </label>
+        <label>
+          <span>Contraseña</span>
+          <input id="loginPassword" type="password" placeholder="••••••••" required />
+        </label>
+        <button class="btn primary">Entrar</button>
+      </form>
+
+      <form id="registerForm" class="form-grid hidden">
+        <label>
+          <span>Nombre</span>
+          <input id="regName" type="text" placeholder="Tu nombre" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input id="regEmail" type="email" placeholder="email" required />
+        </label>
+        <label>
+          <span>Contraseña</span>
+          <input id="regPassword" type="password" placeholder="••••••••" required />
+        </label>
+        <button class="btn primary">Crear cuenta</button>
+      </form>
+    </section>
+
+    <!-- App -->
+    <section id="appSection" class="card hidden">
+      <div class="app-top">
+        <div>
+          <h2>Mis Tareas</h2>
+          <p class="muted" id="hello">Hola, …</p>
+        </div>
+        <div class="legend">
+          <span class="pill pill-pending">pending</span>
+          <span class="pill pill-progress">in_progress</span>
+          <span class="pill pill-done">done</span>
+        </div>
+      </div>
+
+      <form id="taskForm" class="task-form">
+        <input id="taskTitle" type="text" placeholder="Título de la tarea" required />
+        <input id="taskDesc" type="text" placeholder="Descripción (opcional)" />
+        <button class="btn primary">Agregar</button>
+      </form>
+
+      <div id="tasksList" class="tasks"></div>
+      <div id="emptyState" class="empty hidden">
+        <div class="logo big">✓</div>
+        <p>No tienes tareas aún. ¡Crea la primera! 🎯</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>© 2025 Student Tasks</small>
+  </footer>
+
+  <script>
+    
+    window.API_BASE_URL = '';
+  </script>
+  <script src="app.js" defer></script>
+</body>
+</html>
